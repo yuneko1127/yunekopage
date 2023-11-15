@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="prism.js" defer></script>
+    <title>Code Poetry - Yuneko</title>
+</head>
+
+<body>
+    <header>
+        <h1>Code Poetry</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">About</a></li>
+            <li><a href="poem.html">Code Poetry</a></li>
+            <li><a href="graphics.html">Graphics</a></li>
+        </ul>
+    </nav>
+
+    <div class="navigation2">
+        <nav>
+            <ul>
+                <li><a href="#poem_tokureihou">特例法.c</a></li>
+                <li><a href="#poem_not_a_phase">not_a_phase.c</a></li>
+                <li><a href="#poem_gender_assignment">gender_assignment.c</a></li>
+                <li><a href="#poem_your_gender_volid">your_gender_volid.py</a></li>
+                <li><a href="#poem_introduction">introduction.c</a></li>
+
+            </ul>
+        </nav>
+    </div>
+
+    <main>
+        <section id = "poem_tokureihou" class="poem">
+            <h2>特例法.c(2023/10/26)</h2>
+            <pre><code class="language-C">
+#include<stdio.h>
+#include<stdbool.h>
+                    
+bool 特例法(void);
+                       
+int main(void){
+    bool gate;
+    gate = 特例法();
+                           
+    if(gate == true){
+        printf("家庭裁判所の審査を経て、戸籍上の性別を変更できる");
+    } else {
+        printf("戸籍上の性別を変更できない");
+    }
+        return 0;
+}
+                       
+bool 特例法(void){
+    bool gate = false;
+    char diagnosis, child, reproduction, appearance;
+    int age;
+                           
+    printf("2人以上の医師から性同一性障害の診断を受けている(Y or N):");
+    scanf("%c", &diagnosis);
+    printf("あなたの年齢:");
+    scanf("%d", &age);
+    // 2008年の改正を受けて
+    // printf("子がいる(Y or N):");
+    printf("未成年の子がいる(Y or N):");
+    scanf("%c", &child);
+    // 2023/10/25 最高裁判所の違憲判断を受けて
+    // printf("生殖腺や生殖機能がある(Y or N):");
+    // scanf("%c, &reproduction");
+    printf("変更後の性別の性器に似た外見を備えている(Y or N):");
+    scanf("%c, &appearance);
+                           
+    if(diagnosis == 'Y' && age >= 18 && child == 'N' /*&& reproduction == 'N'*/ && appearance == 'Y'){
+       gate = true;
+    }
+                               
+    return gate;
+}
+                </code></pre>
+        </section>
+
+        <section id = "poem_not_a_phase" class="poem">
+            <h2>not_a_phase.c(2023/9/29)</h2>
+            <pre><code class="language-C">
+#include<stdio.h>
+#include<stdbool.h>
+#include<unistd.h>
+                        
+int main(void){
+    char your_sexuality[100];
+    int day = 0;
+    bool all_sexuality = true;
+    bool sexuality_change = false;
+                        
+    printf("Enter your sexuality:");
+    scanf("%s", your_sexuality);
+                        
+    while(all_sexuality == true){
+        if(sexuality_change == true){
+        break;
+    } else if(day == 0){
+        printf("You are %s.\n", your_sexuality);
+    } else if(day == 1){
+        printf("You are still %s after %d day. It's not a phase.\n", your_sexuality, day);
+    } else {
+        printf("You are still %s after %d days. It's not a phase.\n", your_sexuality, day);
+    }
+    sleep(86400);
+    day++;
+    }
+                        
+    return 0;
+}
+                </code></pre>
+        </section>
+
+        <section id = "poem_gender_assignment" class="poem">
+            <h2>gender_assignment.c(2023/9/28)</h2>
+            <pre><code class="language-C">
+#include<stdio.h>
+
+int main(void){
+    char gender[100];
+        
+    printf("Enter your gender:");
+    scanf("%s", gender);
+        
+    if(gender == assigned at birth){
+         printf("Error: invalid assignment.\n");
+    } else if(gender == assigned by yourself){
+         printf("Success: valid assignment.\n");
+    }
+        
+    return 0;
+}
+                </code></pre>
+        </section>
+
+        <section id = "poem_your_gender_volid" class="poem">
+            <h2>your_gender_volid.py(2023/9/28)</h2>
+            <pre><code class="language-Python">
+gender = input("Enter your gender: ").lower()
+ 
+if gender in ["male", "female"]:
+    print("As everyone says, you are valid.")
+else:
+    print("Whatever anyone says, you are valid.")
+                </code></pre>
+        </section>
+
+        <section id = "poem_introduction" class="poem">
+            <h2>introduction.c(2023/9/28)</h2>
+            <pre><code class="language-C">
+#include <stdio.h>
+ 
+int main() {
+    char name[];
+    char pronouns[];
+                    
+    printf("Enter your name:");
+    scanf("%s", name);
+    printf("Enter your pronouns (e.g.:they/them, she/her, he/him):");
+    scanf("%s", pronouns);
+                    
+    printf("Hello World! I'm %s and I use %s pronouns.\n", name, pronouns);
+                    
+    return 0;
+}
+                </code></pre>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2023 ゆう猫</p>
+    </footer>
+
+</body>
+
+</html>
