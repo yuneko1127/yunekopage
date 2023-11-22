@@ -25,6 +25,7 @@
     <div class="navigation2">
         <nav>
             <ul>
+                <li><a href="#poem_typedef_gender">typedef_gender.c</a></li>
                 <li><a href="#poem_tokureihou">特例法.c</a></li>
                 <li><a href="#poem_not_a_phase">not_a_phase.c</a></li>
                 <li><a href="#poem_gender_assignment">gender_assignment.c</a></li>
@@ -36,6 +37,68 @@
     </div>
 
     <main>
+        <section id = "poem_typedef_gender" class="poem">
+            <h2>typedef_gender.c(2023/10/26)</h2>
+            <pre><code class="language-C">
+// Some people
+typedef struct{
+    char family_name[100];
+    char last_name[100];
+    int birth_year;
+    int birth_month;
+    int birth_date;
+} Male;
+typedef struct{
+    char family_name[100];
+    char last_name[100];
+    int birth_year;
+    int birth_month;
+    int birth_date;
+} Female;
+
+// Family register in Japan(戸籍)
+typedef struct{
+    char family_name[100];
+    char last_name[100];
+    int birth_year;
+    int birth_month;
+    int birth_date;
+    char sex;
+} Person_in_law;
+
+// My ally friends
+typedef struct{
+    char family_name[100];
+    char last_name[100];
+    int birth_year;
+    int birth_month;
+    int birth_date;
+    char gender[100];
+} Person_by_friends;
+                
+// Me
+typedef struct{
+    char family_name[100];
+    char last_name[100];
+    int birth_year;
+    int birth_month;
+    int birth_date;
+} Person_by_me;
+                
+                
+int main(void){
+// Some people look me
+Female Yuneko = {???, ??????, 2004, 11, 27};
+// Me in law
+Person_in_law Yuneko = {???, ??????, 2004, 11, 27, F};
+// My ally friends look me
+Person_by_friends Yuneko = {???, ??????, 2004, 11, 27, Nonbinary};
+// I look me
+Person_by_me Yuneko = {???, ??????, 2004, 11, 27};
+}
+                </code></pre>
+        </section>
+
         <section id = "poem_tokureihou" class="poem">
             <h2>特例法.c(2023/10/26)</h2>
             <pre><code class="language-C">
