@@ -29,12 +29,14 @@
             <li><a href="https://sites.google.com/view/yuneko-monologue/home?authuser=0" target=”_blank”>Blog</a></li>
             <li><a href="https://suzuri.jp/yuneko_2004/home" target=”_blank”>Suzuri</a></li>
             <li><a href="contact.html">Contact</a></li>
+            <li><a href="en/en-index.html">EN</a></li>
         </ul>
     </nav>
 
     <div class="navigation2">
         <nav>
             <ul>
+                <li><a href="#poem_survival_is_resistance">survival_is_resistance.c</a></li>
                 <li><a href="#poem_pray">pray.c</a></li>
                 <li><a href="#poem_typedef_gender">typedef_gender.c</a></li>
                 <li><a href="#poem_tokureihou">特例法.c</a></li>
@@ -48,10 +50,20 @@
     </div>
 
     <main>
+        <section id = "poem_survival_is_resistance" class="poem">
+            <h2>survival_is_resistance.c(2024/01/14)</h2>
+            <pre><code class="language-C">
+int main(void) {
+    while(Me == survival){
+        resist(society);
+    }
+    return 0;
+}   </code></pre>
+        </section>
+
         <section id = "poem_pray" class="poem">
             <h2>pray.c(2024/01/03)</h2>
             <pre><code class="language-C">
-#include&lt;stdio.h&gt;
 int main(void){
     while(1){
         pray for *;
@@ -112,14 +124,10 @@ typedef struct{
                 
                 
 int main(void){
-    // Some people look me
-    Female Yuneko = {???, ??????, 2004, 11, 27};
-    // Me in law
-    Person_in_law Yuneko = {???, ??????, 2004, 11, 27, F};
-    // My ally friends look me
-    Person_by_friends Yuneko = {???, ??????, 2004, 11, 27, Nonbinary};
-    // I look me
-    Person_by_me Yuneko = {???, ??????, 2004, 11, 27};
+    Female Yuneko_by_someone = {"???", "??????", 2004, 11, 27};
+    Person_in_law Yuneko_in_law = {"???", "??????", 2004, 11, 27, 'F'};
+    Person_by_friends Yuneko_by_ally = {"???", "??????", 2004, 11, 27, "Nonbinary"};
+    Person_by_me Yuneko_by_me = {"???", "??????", 2004, 11, 27};
 
     return 0;
 }</code></pre>
@@ -160,7 +168,7 @@ bool 特例法(void){
     scanf("%c", &child);
     // 2023/10/25 最高裁判所の違憲判断を受けて
     // printf("生殖腺や生殖機能がある(Y or N):");
-    // scanf("%c, &reproduction");
+    // scanf("%c", &reproduction");
     printf("変更後の性別の性器に似た外見を備えている(Y or N):");
     scanf("%c, &appearance);
                            
