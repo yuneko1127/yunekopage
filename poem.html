@@ -50,47 +50,6 @@
     </div>
 
     <main>
-        <section id = "poem_binary_search" class="poem">
-            <h2>binary_search.c(2024/01/14)</h2>
-            <pre><code class="language-C">
-// In computer
-#define N 100 // データ数
-
-int binary_search(int *data, int key){
-    int pl, pr, pc;
-     
-    pl = 0;
-    pr = N-1;
-                
-    do{
-        pc = (pl+pr)/2;
-        if(data[pc] == key){
-            return pc;
-        } else if(data[pc] < key){
-            pl = pc + 1;
-        } else{
-            pr = pc - 1;
-        }
-    }while(pl <= pr);
-                
-    return -1;		 
-}
-
-// In society
-void binary_search(Person *people, int gender){
-    int i;
-    
-    for(i=0; i<N; i++){
-        if(people[i].appearance == 'M'){
-            people[i].gender = 'M';
-        } else if(people[i].appearance == 'F'){
-            people[i].gender = 'F';
-        }
-    }
-    return 0;
-}</code></pre>
-        </section>
-
         <section id = "poem_survival_is_resistance" class="poem">
             <h2>生存は抵抗.c(2024/01/14)</h2>
             <pre><code class="language-C">
