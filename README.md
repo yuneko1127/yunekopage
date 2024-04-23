@@ -1,2 +1,2 @@
-Yunekoが創作物を公開しているページのリポジトリです\n
-https://yuneko1127.github.io/yunekopage/
+# Yunekoが創作物を公開しているページのリポジトリです
+[ページ](https://yuneko1127.github.io/yunekopage/)
