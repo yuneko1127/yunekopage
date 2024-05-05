@@ -241,13 +241,13 @@ int main(void){
     while(all_sexuality == true){
         if(sexuality_change == true){
         break;
-    } else if(day == 0){
+        } else if(day == 0){
         printf("You are %s.\n", your_sexuality);
-    } else if(day == 1){
+        } else if(day == 1){
         printf("You are still %s after %d day. It's not a phase.\n", your_sexuality, day);
-    } else {
+        } else {
         printf("You are still %s after %d days. It's not a phase.\n", your_sexuality, day);
-    }
+        }
     sleep(86400);
     day++;
     }
