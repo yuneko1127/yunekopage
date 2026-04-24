@@ -8,30 +8,18 @@
     <meta property="og:url" content="https://yuneko1127.github.io/yunekopage/poem.html" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Code Poems - Yuneko" />
-    <meta property="og:image" content="https://yuneko1127.github.io/yunekopage/image/A%20cat%20in%20a%20digital%20world.jpg" />
+    <meta property="og:image"
+        content="https://yuneko1127.github.io/yunekopage/image/A%20cat%20in%20a%20digital%20world.jpg" />
     <link rel="stylesheet" href="styles.css">
     <script src="prism.js" defer></script>
     <link rel="icon" href="favicon.ico" type="image/A cat in a digital world.jpg">
     <link rel="shortcut icon" href="favicon.ico" type="image/A cat in a digital world.jpg">
     <title>Code Poems - Yuneko</title>
+    <script src="shared-layout.js" defer></script>
 </head>
 
 <body>
-    <header>
-        <h1>Code Poems</h1>
-    </header>
-
-    <nav>
-        <ul>
-            <li><a href="index.html">About</a></li>
-            <li><a href="poem.html">Code Poems</a></li>
-            <li><a href="graphics.html">Graphics</a></li>
-            <li><a href="https://sites.google.com/view/yuneko-monologue/home?authuser=0" target=”_blank”>Blog</a></li>
-            <li><a href="https://suzuri.jp/yuneko_2004/home" target=”_blank”>Suzuri</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="en/en-index.html">EN</a></li>
-        </ul>
-    </nav>
+    <header id="site-header" data-title="Code Poems" data-current="poem"></header>
 
     <div class="navigation2">
         <nav>
@@ -53,21 +41,21 @@
     </div>
 
     <main>
-        <section id = "poem_unsignd_signd" class="poem">
+        <section id="poem_unsignd_signd" class="poem">
             <h2>不合なし不合付き</h2>
             <pre><code class="language-C">
 unsignd int cisgender_person;
 signd int transgender_person;</code></pre>
         </section>
 
-        <section id = "poem_about_enemy" class="poem">
+        <section id="poem_about_enemy" class="poem">
             <h2>敵について</h2>
             <div class="image">
                 <img src="image/aboutEnemy.png" alt="茨木のり子の敵についてという詩の書かれたtxtファイルの含まれているディレクトリで「grep 敵 *」をした画像">
             </div>
         </section>
 
-        <section id = "poem_binary_search" class="poem">
+        <section id="poem_binary_search" class="poem">
             <h2>binary_search.c</h2>
             <pre><code class="language-C">
 #define N 100 // データ数
@@ -108,7 +96,7 @@ void binary_search(Person *people){
 }</code></pre>
         </section>
 
-        <section id = "poem_survival_is_resistance" class="poem">
+        <section id="poem_survival_is_resistance" class="poem">
             <h2>生存は抵抗.c</h2>
             <pre><code class="language-C">
 int main(void) {
@@ -119,7 +107,7 @@ int main(void) {
 }   </code></pre>
         </section>
 
-        <section id = "poem_pray" class="poem">
+        <section id="poem_pray" class="poem">
             <h2>pray.c</h2>
             <pre><code class="language-C">
 int main(void){
@@ -130,7 +118,7 @@ int main(void){
 }      </code></pre>
         </section>
 
-        <section id = "poem_typedef_gender" class="poem">
+        <section id="poem_typedef_gender" class="poem">
             <h2>typedef_gender.c</h2>
             <pre><code class="language-C">
 #include&lt;stdio.h&gt;
@@ -191,7 +179,7 @@ int main(void){
 }</code></pre>
         </section>
 
-        <section id = "poem_tokureihou" class="poem">
+        <section id="poem_tokureihou" class="poem">
             <h2>特例法.c</h2>
             <pre><code class="language-C">
 #include&lt;stdio.h&gt;
@@ -238,7 +226,7 @@ bool 特例法(void){
 }</code></pre>
         </section>
 
-        <section id = "poem_not_a_phase" class="poem">
+        <section id="poem_not_a_phase" class="poem">
             <h2>not_a_phase.c</h2>
             <pre><code class="language-C">
 #include&lt;stdio.h&gt;
@@ -272,7 +260,7 @@ int main(void){
 }</code></pre>
         </section>
 
-        <section id = "poem_gender_assignment" class="poem">
+        <section id="poem_gender_assignment" class="poem">
             <h2>gender_assignment.c</h2>
             <pre><code class="language-C">
 #include&lt;stdio.h&gt;
@@ -293,7 +281,7 @@ int main(void){
 }</code></pre>
         </section>
 
-        <section id = "poem_your_gender_volid" class="poem">
+        <section id="poem_your_gender_volid" class="poem">
             <h2>your_gender_volid.py</h2>
             <pre><code class="language-Python">
 gender = input("Enter your gender: ").lower()
@@ -304,7 +292,7 @@ else:
     print("Whatever anyone says, you are valid.")</code></pre>
         </section>
 
-        <section id = "poem_introduction" class="poem">
+        <section id="poem_introduction" class="poem">
             <h2>introduction.c</h2>
             <pre><code class="language-C">
 #include &lt;stdio.h&gt;
@@ -326,9 +314,7 @@ int main() {
 
     </main>
 
-    <footer>
-        <p>&copy; 2025 ゆう猫</p>
-    </footer>
+    <footer id="site-footer"></footer>
 
 </body>
 
