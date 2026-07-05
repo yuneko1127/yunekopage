@@ -1,8 +1,8 @@
 # 著作権および画像使用ライセンスについて / Copyright & License
 
-本ディレクトリ（`image/`）内の画像ファイル（「XXX in Tech」シリーズなどのグラフィック作品およびアセット）の著作権は、すべて作者である Yuneko に帰属します。
+本ディレクトリ（`image/`）内の画像ファイル（「XXX in Tech」シリーズなどのグラフィック作品およびアセット）の著作権は、すべて作者である yuneko に帰属します。
 
-All image files (graphic works and assets like "XXX in Tech" series) in this directory (`image/`) are copyrighted by the author, Yuneko.
+All image files (graphic works and assets like "XXX in Tech" series) in this directory (`image/`) are copyrighted by the author, yuneko.
 
 ---
 

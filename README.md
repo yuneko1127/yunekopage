@@ -1,4 +1,4 @@
-# Yunekoが創作物を公開しているページのリポジトリです
+# yunekoが創作物を公開しているページのリポジトリです
 [ページ](https://yuneko1127.github.io/yunekopage/)
 
 ## ディレクトリ構成
@@ -22,12 +22,12 @@ python -m http.server 8000
 ---
 
 ## 著作権について / Copyright Notice
-本プロジェクトに含まれるWebページ、画像（`image/` 内）、およびコード詩のファイル（`poems/` 内）を含む、すべてのファイル・コンテンツの著作権は、すべて作者である Yuneko に帰属します。
+本プロジェクトに含まれるWebページ、画像（`image/` 内）、およびコード詩のファイル（`poems/` 内）を含む、すべてのファイル・コンテンツの著作権は、すべて作者である yuneko に帰属します。
 
 無断での転載、二次利用、改変、再配布などの行為は禁止します。
 
 ---
 
-All files and contents in this project, including web pages (HTML, CSS, JS, etc.), images (in `image/`), and program source files for code poems (in `poems/`), are copyrighted by the author, Yuneko.
+All files and contents in this project, including web pages (HTML, CSS, JS, etc.), images (in `image/`), and program source files for code poems (in `poems/`), are copyrighted by the author, yuneko.
 
 Unauthorized reproduction, secondary use, modification, or redistribution is strictly prohibited.
