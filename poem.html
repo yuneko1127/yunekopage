@@ -58,103 +58,16 @@
                 </div>
                 <div class="tab-contents">
                     <div id="tab-person" class="tab-content active">
-                        <pre><code class="language-clike">public class Person {
-    private String name;
-    private Gender gender;
-    public Gender appearance;
-    private boolean visitedGenderClinic; 
-
-    public Person(String name, Gender appearance, Doctor doctor) {
-        this.name = name;
-        this.gender = doctor.assignGender(this);
-        this.appearance = appearance;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name, Court familyCourt ) {
-        if (familyCourt.validateName(this, name)) {
-            this.name = name;
-        } else {
-            throw new IllegalArgumentException("Invalid name");
-        }
-    }
-
-    public Gender getGender() {
-        return gender;
-    }
-
-    public void setGender(Gender gender, Court familyCourt, Doctor doctor ) {
-        if (familyCourt.validateGender(this, gender, doctor)) {
-            this.gender = gender;
-        } else {
-            throw new IllegalArgumentException("Invalid gender");
-        }
-    }
-
-    public Gender getAppearance() {
-        return appearance;
-    }
-
-    public void setAppearance(Gender appearance) {
-        this.appearance = appearance;
-    }
-
-    public boolean getMedicalTransition() {
-        return this.visitedGenderClinic;
-    }
-
-    public void visitGenderClinic(Doctor doctor) {
-        this.visitedGenderClinic = true;
-    }
-
-    
-}</code></pre>
+                        <pre><code class="language-clike" data-src="poems/HardcodedGender.java/Person.java" lang="en" aria-live="polite">読み込み中...</code></pre>
                     </div>
                     <div id="tab-gender" class="tab-content">
-                        <pre><code class="language-clike">public enum Gender {
-    MALE,
-    FEMALE
-}</code></pre>
+                        <pre><code class="language-clike" data-src="poems/HardcodedGender.java/Gender.java" lang="en" aria-live="polite">読み込み中...</code></pre>
                     </div>
                     <div id="tab-doctor" class="tab-content">
-                        <pre><code class="language-clike">class Doctor extends Person {
-
-    public Gender assignGender(Person person) {
-        if (person.getAppearance() == Gender.MALE) {
-            return Gender.MALE;
-        } else {
-            return Gender.FEMALE;
-        }
-    }
-
-    public boolean shareMedicalInfo(Person person) {
-        return person.getMedicalTransition();
-    }
-
-}</code></pre>
+                        <pre><code class="language-clike" data-src="poems/HardcodedGender.java/Doctor.java" lang="en" aria-live="polite">読み込み中...</code></pre>
                     </div>
                     <div id="tab-court" class="tab-content">
-                        <pre><code class="language-clike">class Court {
-    
-    public boolean validateName(Person person, String name) {
-        if (!person.getAppearance().equals(person.getGender())) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-    
-    public boolean validateGender(Person person, Gender gender, Doctor doctor) {
-        if (doctor.shareMedicalInfo(person) &amp;&amp; person.getAppearance().equals(gender)) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-}</code></pre>
+                        <pre><code class="language-clike" data-src="poems/HardcodedGender.java/Court.java" lang="en" aria-live="polite">読み込み中...</code></pre>
                     </div>
                 </div>
             </div>
@@ -162,273 +75,59 @@
 
         <section id="poem_unsignd_signd" class="poem">
             <h2>不合なし不合付き</h2>
-            <pre><code class="language-C">
-unsignd int cisgender_person;
-signd int transgender_person;</code></pre>
+            <pre><code class="language-C" data-src="poems/unsignd_signd.c" lang="en" aria-live="polite">読み込み中...</code></pre>
         </section>
 
         <section id="poem_about_enemy" class="poem">
             <h2>敵について</h2>
             <div class="image">
-                <img src="image/aboutEnemy.png" alt="茨木のり子の敵についてという詩の書かれたtxtファイルの含まれているディレクトリで「grep 敵 *」をした画像">
+                <img src="poems/aboutEnemy.png" alt="茨木のり子の敵についてという詩の書かれたtxtファイルの含まれているディレクトリで「grep 敵 *」をした画像">
             </div>
         </section>
 
         <section id="poem_binary_search" class="poem">
             <h2>binary_search.c</h2>
-            <pre><code class="language-C">
-#define N 100 // データ数
-
-// In computer
-int binary_search(int *data, int key){
-    int pl, pr, pc;
-     
-    pl = 0;
-    pr = N-1;
-                
-    do{
-        pc = (pl+pr)/2;
-        if(data[pc] == key){
-            return pc;
-        } else if(data[pc] < key){
-            pl = pc + 1;
-        } else{
-            pr = pc - 1;
-        }
-    }while(pl <= pr);
-                
-    return -1;		 
-}
-
-// In society
-void binary_search(Person *people){
-    int i;
-    
-    for(i=0; i&ltN; i++){
-        if(people[i].appearance == 'M'){
-            people[i].gender = 'M';
-        } else if(people[i].appearance == 'F'){
-            people[i].gender = 'F';
-        }
-    }
-    return;
-}</code></pre>
+            <pre><code class="language-C" data-src="poems/binary_search.c" lang="en" aria-live="polite">読み込み中...</code></pre>
         </section>
 
         <section id="poem_survival_is_resistance" class="poem">
             <h2>生存は抵抗.c</h2>
-            <pre><code class="language-C">
-int main(void) {
-    while(Me == survival){
-        resist(society);
-    }
-    return 0;
-}   </code></pre>
+            <pre><code class="language-C" data-src="poems/survival_is_resistance.c" lang="en" aria-live="polite">読み込み中...</code></pre>
         </section>
 
         <section id="poem_pray" class="poem">
             <h2>pray.c</h2>
-            <pre><code class="language-C">
-int main(void){
-    while(1){
-        pray for *;
-    }
-    return 0;
-}      </code></pre>
+            <pre><code class="language-C" data-src="poems/pray.c" lang="en" aria-live="polite">読み込み中...</code></pre>
         </section>
 
         <section id="poem_typedef_gender" class="poem">
             <h2>typedef_gender.c</h2>
-            <pre><code class="language-C">
-#include&lt;stdio.h&gt;
-
-// Some people
-typedef struct{
-    char family_name[100];
-    char last_name[100];
-    int birth_year;
-    int birth_month;
-    int birth_date;
-} Male;
-typedef struct{
-    char family_name[100];
-    char last_name[100];
-    int birth_year;
-    int birth_month;
-    int birth_date;
-} Female;
-
-// Family register in Japan(戸籍)
-typedef struct{
-    char family_name[100];
-    char last_name[100];
-    int birth_year;
-    int birth_month;
-    int birth_date;
-    char sex;
-} Person_in_law;
-
-// My ally friends
-typedef struct{
-    char family_name[100];
-    char last_name[100];
-    int birth_year;
-    int birth_month;
-    int birth_date;
-    char gender[100];
-} Person_by_friends;
-                
-// Me
-typedef struct{
-    char family_name[100];
-    char last_name[100];
-    int birth_year;
-    int birth_month;
-    int birth_date;
-} Person_by_me;
-                
-                
-int main(void){
-    Female Yuneko_by_someone = {"???", "??????", 2004, 11, 27};
-    Person_in_law Yuneko_in_law = {"???", "??????", 2004, 11, 27, 'F'};
-    Person_by_friends Yuneko_by_ally = {"???", "??????", 2004, 11, 27, "Nonbinary"};
-    Person_by_me Yuneko_by_me = {"???", "??????", 2004, 11, 27};
-
-    return 0;
-}</code></pre>
+            <pre><code class="language-C" data-src="poems/typedef_gender.c" lang="en" aria-live="polite">読み込み中...</code></pre>
         </section>
 
         <section id="poem_tokureihou" class="poem">
             <h2>特例法.c</h2>
-            <pre><code class="language-C">
-#include&lt;stdio.h&gt;
-#include&lt;stdbool.h&gt;
-                    
-bool 特例法(void);
-                       
-int main(void){
-    bool gate;
-    gate = 特例法();
-                           
-    if(gate == true){
-        printf("家庭裁判所の審査を経て、戸籍上の性別を変更できる");
-    } else {
-        printf("戸籍上の性別を変更できない");
-    }
-    return 0;
-}
-                       
-bool 特例法(void){
-    bool gate = false;
-    char diagnosis, child, reproduction, appearance;
-    int age;
-                           
-    printf("2人以上の医師から性同一性障害の診断を受けている(Y or N):");
-    scanf("%c", &diagnosis);
-    printf("あなたの年齢:");
-    scanf("%d", &age);
-    // 2008年の改正を受けて
-    // printf("子がいる(Y or N):");
-    printf("未成年の子がいる(Y or N):");
-    scanf("%c", &child);
-    // 2023/10/25 最高裁判所の違憲判断を受けて
-    // printf("生殖腺や生殖機能がある(Y or N):");
-    // scanf("%c", &reproduction");
-    printf("変更後の性別の性器に似た外見を備えている(Y or N):");
-    scanf("%c, &appearance);
-                           
-    if(diagnosis == 'Y' && age >= 18 && child == 'N' /*&& reproduction == 'N'*/ && appearance == 'Y'){
-       gate = true;
-    }
-                               
-    return gate;
-}</code></pre>
+            <pre><code class="language-C" data-src="poems/tokureihou.c" lang="en" aria-live="polite">読み込み中...</code></pre>
         </section>
 
         <section id="poem_not_a_phase" class="poem">
             <h2>not_a_phase.c</h2>
-            <pre><code class="language-C">
-#include&lt;stdio.h&gt;
-#include&lt;stdbool.h&gt;
-#include&lt;unistd.h&gt;
-                        
-int main(void){
-    char your_sexuality[100];
-    int day = 0;
-    bool all_sexuality = true;
-    bool sexuality_change = false;
-                        
-    printf("Enter your sexuality:");
-    scanf("%s", your_sexuality);
-                        
-    while(all_sexuality == true){
-        if(sexuality_change == true){
-        break;
-        } else if(day == 0){
-        printf("You are %s.\n", your_sexuality);
-        } else if(day == 1){
-        printf("You are %s after %d day. It's not a phase.\n", your_sexuality, day);
-        } else {
-        printf("You are still %s after %d days. It's not a phase.\n", your_sexuality, day);
-        }
-    sleep(1);
-    day++;
-    }
-                        
-    return 0;
-}</code></pre>
+            <pre><code class="language-C" data-src="poems/not_a_phase.c" lang="en" aria-live="polite">読み込み中...</code></pre>
         </section>
 
         <section id="poem_gender_assignment" class="poem">
             <h2>gender_assignment.c</h2>
-            <pre><code class="language-C">
-#include&lt;stdio.h&gt;
-
-int main(void){
-    char gender[100];
-        
-    printf("Enter your gender:");
-    scanf("%s", gender);
-        
-    if(gender == assigned at birth){
-         printf("Error: invalid assignment.\n");
-    } else if(gender == assigned by yourself){
-         printf("Success: valid assignment.\n");
-    }
-        
-    return 0;
-}</code></pre>
+            <pre><code class="language-C" data-src="poems/gender_assignment.c" lang="en" aria-live="polite">読み込み中...</code></pre>
         </section>
 
         <section id="poem_your_gender_volid" class="poem">
             <h2>your_gender_volid.py</h2>
-            <pre><code class="language-Python">
-gender = input("Enter your gender: ").lower()
- 
-if gender in ["male", "female"]:
-    print("As everyone says, you are valid.")
-else:
-    print("Whatever anyone says, you are valid.")</code></pre>
+            <pre><code class="language-Python" data-src="poems/your_gender_volid.py" lang="en" aria-live="polite">読み込み中...</code></pre>
         </section>
 
         <section id="poem_introduction" class="poem">
             <h2>introduction.c</h2>
-            <pre><code class="language-C">
-#include &lt;stdio.h&gt;
- 
-int main() {
-    char name[];
-    char pronouns[];
-                    
-    printf("Enter your name:");
-    scanf("%s", name);
-    printf("Enter your pronouns (e.g.:they/them, she/her, he/him):");
-    scanf("%s", pronouns);
-                    
-    printf("Hello World! I'm %s and I use %s pronouns.\n", name, pronouns);
-                    
-    return 0;
-}</code></pre>
+            <pre><code class="language-C" data-src="poems/introduction.c" lang="en" aria-live="polite">読み込み中...</code></pre>
         </section>
 
     </main>
@@ -464,6 +163,33 @@ int main() {
                     const nav = document.querySelector('.toc-nav');
                     toggle.classList.remove('active');
                     nav.style.display = 'none';
+                }
+            });
+        });
+
+        // 外部ファイルから詩を動的に読み込むスクリプト
+        document.addEventListener('DOMContentLoaded', () => {
+            const codeBlocks = document.querySelectorAll('code[data-src]');
+            const promises = Array.from(codeBlocks).map(codeBlock => {
+                const src = codeBlock.getAttribute('data-src');
+                return fetch(src)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`Failed to load ${src}`);
+                        }
+                        return response.text();
+                    })
+                    .then(text => {
+                        codeBlock.textContent = text;
+                    })
+                    .catch(error => {
+                        codeBlock.textContent = `エラー: 読み込みに失敗しました (${error.message})`;
+                    });
+            });
+
+            Promise.all(promises).then(() => {
+                if (window.Prism) {
+                    window.Prism.highlightAll();
                 }
             });
         });
