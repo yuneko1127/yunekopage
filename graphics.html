@@ -19,19 +19,25 @@
 <body>
     <header id="site-header" data-title="Graphics" data-current="graphics"></header>
 
-    <div class="navigation2">
-        <nav>
-            <ul>
-                <li><a href="#survival_is_resistance">Survival is Resistance</a></li>
-                <li><a href="#Non-binary_in_Tech">Non-binary in Tech</a></li>
-                <li><a href="#Trans_in_Tech">Trans in Tech</a></li>
-                <li><a href="#LGBTQ+_in_Tech">LGBTQ+ in Tech</a></li>
-                <li><a href="#Queer_in_Tech">Queer in Tech</a></li>
-            </ul>
-        </nav>
-    </div>
+    <div class="layout-with-sidebar">
+        <aside class="sidebar-toc">
+            <button class="mobile-toc-toggle" onclick="toggleMobileToc()">
+                <span>目次</span>
+                <span class="toggle-icon">▾</span>
+            </button>
+            <nav class="toc-nav">
+                <h3>目次</h3>
+                <ul>
+                    <li><a href="#survival_is_resistance">Survival is Resistance</a></li>
+                    <li><a href="#Non-binary_in_Tech">Non-binary in Tech</a></li>
+                    <li><a href="#Trans_in_Tech">Trans in Tech</a></li>
+                    <li><a href="#LGBTQ+_in_Tech">LGBTQ+ in Tech</a></li>
+                    <li><a href="#Queer_in_Tech">Queer in Tech</a></li>
+                </ul>
+            </nav>
+        </aside>
 
-    <main>
+        <main>
         <section id="survival_is_resistance" class="graphics">
             <div class="caption">
                 <h2>Survival is Resistance</h2>
@@ -111,8 +117,30 @@
         </section>
 
     </main>
+</div>
 
     <footer id="site-footer"></footer>
+
+    <script>
+        function toggleMobileToc() {
+            const toggle = document.querySelector('.mobile-toc-toggle');
+            const nav = document.querySelector('.toc-nav');
+            const isOpen = toggle.classList.toggle('active');
+            nav.style.display = isOpen ? 'block' : 'none';
+        }
+
+        // モバイル表示の際、リンクをクリックしたら自動的に目次を閉じる
+        document.querySelectorAll('.toc-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth < 1024) {
+                    const toggle = document.querySelector('.mobile-toc-toggle');
+                    const nav = document.querySelector('.toc-nav');
+                    toggle.classList.remove('active');
+                    nav.style.display = 'none';
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

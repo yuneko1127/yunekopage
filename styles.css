@@ -128,6 +128,7 @@ main {
     height: auto; 
 }
 
+
 @media (max-width: 768px) {
     .images {
         flex-direction: column;
@@ -348,4 +349,652 @@ https://prismjs.com/download.html#themes=prism-okaidia&languages=markup+css+clik
  pre[id].linkable-line-numbers span.line-numbers-rows > span:hover:before {
      background-color: rgba(128, 128, 128, .2);
  }
+
+/* Code Tabs for Multi-file poems */
+.code-tabs {
+    margin-top: 15px;
+    border: 1px solid #3e3e3e;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: #272822; /* Matches Prism's okaidia background */
+}
+
+.tab-buttons {
+    display: flex;
+    background-color: #1e1e1e;
+    border-bottom: 1px solid #3e3e3e;
+    overflow-x: auto;
+}
+
+.tab-button {
+    background: none;
+    border: none;
+    color: #888;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-size: 0.9em;
+    outline: none;
+    transition: background-color 0.2s, color 0.2s;
+    border-right: 1px solid #2d2d2d;
+    white-space: nowrap;
+}
+
+.tab-button:hover {
+    background-color: #2a2a2a;
+    color: #fff;
+}
+
+.tab-button.active {
+    background-color: #272822;
+    color: #a6e22e; /* Okaidia green */
+    font-weight: bold;
+    border-bottom: 2px solid #a6e22e;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
  
+ .token.comment,
+ .token.prolog,
+ .token.doctype,
+ .token.cdata {
+     color: #8292a2;
+ }
+ 
+ .token.punctuation {
+     color: #f8f8f2;
+ }
+ 
+ .token.namespace {
+     opacity: .7;
+ }
+ 
+ .token.property,
+ .token.tag,
+ .token.constant,
+ .token.symbol,
+ .token.deleted {
+     color: #f92672;
+ }
+ 
+ .token.boolean,
+ .token.number {
+     color: #ae81ff;
+ }
+ 
+ .token.selector,
+ .token.attr-name,
+ .token.string,
+ .token.char,
+ .token.builtin,
+ .token.inserted {
+     color: #a6e22e;
+ }
+ 
+ .token.operator,
+ .token.entity,
+ .token.url,
+ .language-css .token.string,
+ .style .token.string,
+ .token.variable {
+     color: #f8f8f2;
+ }
+ 
+ .token.atrule,
+ .token.attr-value,
+ .token.function,
+ .token.class-name {
+     color: #e6db74;
+ }
+ 
+ .token.keyword {
+     color: #66d9ef;
+ }
+ 
+ .token.regex,
+ .token.important {
+     color: #fd971f;
+ }
+ 
+ .token.important,
+ .token.bold {
+     font-weight: bold;
+ }
+ .token.italic {
+     font-style: italic;
+ }
+ 
+ .token.entity {
+     cursor: help;
+ }
+ 
+ pre[data-line] {
+     position: relative;
+     padding: 1em 0 1em 3em;
+ }
+ 
+ .line-highlight {
+     position: absolute;
+     left: 0;
+     right: 0;
+     padding: inherit 0;
+     margin-top: 1em; /* Same as .prism’s padding-top */
+ 
+     background: hsla(24, 20%, 50%,.08);
+     background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+ 
+     pointer-events: none;
+ 
+     line-height: inherit;
+     white-space: pre;
+ }
+ 
+ @media print {
+     .line-highlight {
+         /*
+          * This will prevent browsers from replacing the background color with white.
+          * It's necessary because the element is layered on top of the displayed code.
+          */
+         -webkit-print-color-adjust: exact;
+         color-adjust: exact;
+     }
+ }
+ 
+     .line-highlight:before,
+     .line-highlight[data-end]:after {
+         content: attr(data-start);
+         position: absolute;
+         top: .4em;
+         left: .6em;
+         min-width: 1em;
+         padding: 0 .5em;
+         background-color: hsla(24, 20%, 50%,.4);
+         color: hsl(24, 20%, 95%);
+         font: bold 65%/1.5 sans-serif;
+         text-align: center;
+         vertical-align: .3em;
+         border-radius: 999px;
+         text-shadow: none;
+         box-shadow: 0 1px white;
+     }
+ 
+     .line-highlight[data-end]:after {
+         content: attr(data-end);
+         top: auto;
+         bottom: .4em;
+     }
+ 
+ .line-numbers .line-highlight:before,
+ .line-numbers .line-highlight:after {
+     content: none;
+ }
+ 
+ pre[id].linkable-line-numbers span.line-numbers-rows {
+     pointer-events: all;
+ }
+ pre[id].linkable-line-numbers span.line-numbers-rows > span:before {
+     cursor: pointer;
+ }
+ pre[id].linkable-line-numbers span.line-numbers-rows > span:hover:before {
+     background-color: rgba(128, 128, 128, .2);
+ }
+ 
+ /* Code Tabs for Multi-file poems */
+ .code-tabs {
+     margin-top: 15px;
+     border: 1px solid #3e3e3e;
+     border-radius: 6px;
+     overflow: hidden;
+     background-color: #272822; /* Matches Prism's okaidia background */
+ }
+ 
+ .tab-buttons {
+     display: flex;
+     background-color: #1e1e1e;
+     border-bottom: 1px solid #3e3e3e;
+     overflow-x: auto;
+ }
+ 
+ .tab-button {
+     background: none;
+     border: none;
+     color: #888;
+     padding: 10px 20px;
+     cursor: pointer;
+     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+     font-size: 0.9em;
+     outline: none;
+     transition: background-color 0.2s, color 0.2s;
+     border-right: 1px solid #2d2d2d;
+     white-space: nowrap;
+ }
+ 
+ .tab-button:hover {
+     background-color: #2a2a2a;
+     color: #fff;
+ }
+ 
+ .tab-button.active {
+     background-color: #272822;
+     color: #a6e22e; /* Okaidia green */
+     font-weight: bold;
+     border-bottom: 2px solid #a6e22e;
+ }
+ 
+ .tab-content {
+     display: none;
+ }
+ 
+ .tab-content.active {
+     display: block;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+    color: #8292a2;
+}
+
+.token.punctuation {
+    color: #f8f8f2;
+}
+
+.token.namespace {
+    opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+    color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+    color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+    color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+    color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+    color: #e6db74;
+}
+
+.token.keyword {
+    color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+    color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+    font-weight: bold;
+}
+.token.italic {
+    font-style: italic;
+}
+
+.token.entity {
+    cursor: help;
+}
+
+pre[data-line] {
+    position: relative;
+    padding: 1em 0 1em 3em;
+}
+
+.line-highlight {
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: inherit 0;
+    margin-top: 1em; /* Same as .prism’s padding-top */
+
+    background: hsla(24, 20%, 50%,.08);
+    background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+
+    pointer-events: none;
+
+    line-height: inherit;
+    white-space: pre;
+}
+
+@media print {
+    .line-highlight {
+        /*
+         * This will prevent browsers from replacing the background color with white.
+         * It's necessary because the element is layered on top of the displayed code.
+         */
+        -webkit-print-color-adjust: exact;
+        color-adjust: exact;
+    }
+}
+
+    .line-highlight:before,
+    .line-highlight[data-end]:after {
+        content: attr(data-start);
+        position: absolute;
+        top: .4em;
+        left: .6em;
+        min-width: 1em;
+        padding: 0 .5em;
+        background-color: hsla(24, 20%, 50%,.4);
+        color: hsl(24, 20%, 95%);
+        font: bold 65%/1.5 sans-serif;
+        text-align: center;
+        vertical-align: .3em;
+        border-radius: 999px;
+        text-shadow: none;
+        box-shadow: 0 1px white;
+    }
+
+    .line-highlight[data-end]:after {
+        content: attr(data-end);
+        top: auto;
+        bottom: .4em;
+    }
+
+.line-numbers .line-highlight:before,
+.line-numbers .line-highlight:after {
+    content: none;
+}
+
+pre[id].linkable-line-numbers span.line-numbers-rows {
+    pointer-events: all;
+}
+pre[id].linkable-line-numbers span.line-numbers-rows > span:before {
+    cursor: pointer;
+}
+pre[id].linkable-line-numbers span.line-numbers-rows > span:hover:before {
+    background-color: rgba(128, 128, 128, .2);
+}
+
+/* Code Tabs for Multi-file poems */
+.code-tabs {
+    margin-top: 15px;
+    border: 1px solid #3e3e3e;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: #272822; /* Matches Prism's okaidia background */
+}
+
+.tab-buttons {
+    display: flex;
+    background-color: #1e1e1e;
+    border-bottom: 1px solid #3e3e3e;
+    overflow-x: auto;
+}
+
+.tab-button {
+    background: none;
+    border: none;
+    color: #888;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-size: 0.9em;
+    outline: none;
+    transition: background-color 0.2s, color 0.2s;
+    border-right: 1px solid #2d2d2d;
+    white-space: nowrap;
+}
+
+.tab-button:hover {
+    background-color: #2a2a2a;
+    color: #fff;
+}
+
+.tab-button.active {
+    background-color: #272822;
+    color: #a6e22e; /* Okaidia green */
+    font-weight: bold;
+    border-bottom: 2px solid #a6e22e;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.tab-content pre {
+    margin: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+}
+
+/* Align TOC box with first section title & add graphics spacing */
+.poem h2, .graphics h2 {
+    margin-top: 0;
+}
+.graphics {
+    margin-bottom: 40px;
+}
+
+  /* PC/Desktop Layout Shared Styles (1024px and wider) */
+  @media (min-width: 1024px) {
+      .sidebar-toc {
+          width: 260px;
+          flex-shrink: 0;
+          position: sticky;
+          top: 20px;
+          max-height: calc(100vh - 40px);
+          overflow-y: auto;
+      }
+      
+      .sidebar-toc::-webkit-scrollbar {
+          width: 6px;
+      }
+      .sidebar-toc::-webkit-scrollbar-thumb {
+          background-color: #e0dbf5;
+          border-radius: 3px;
+      }
+      
+      .mobile-toc-toggle {
+          display: none; /* Hide on desktop */
+      }
+      
+      .toc-nav {
+          display: block !important;
+          background-color: var(--main-color-light);
+          border: 1px solid #e0dbf5;
+          border-radius: 8px;
+          padding: 20px;
+      }
+      
+      .toc-nav h3 {
+          margin-top: 0;
+          margin-bottom: 15px;
+          font-size: 1.1em;
+          color: var(--main-color);
+          border-bottom: 2px solid var(--main-color);
+          padding-bottom: 8px;
+      }
+      
+      .toc-nav ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+      }
+      
+      .toc-nav li {
+          display: block;
+      }
+      
+      .toc-nav a {
+          display: block;
+          padding: 6px 10px;
+          color: #444;
+          text-decoration: none;
+          font-size: 0.95em;
+          border-radius: 4px;
+          transition: all 0.2s ease;
+      }
+      
+      .toc-nav a:hover {
+          background-color: #e0dbf5;
+          color: var(--main-color);
+          padding-left: 14px; /* subtle slide effect */
+      }
+      
+      .layout-with-sidebar main {
+          margin: 0;
+          padding: 0;
+      }
+  }
+
+  /* Large Screen Grid Layout (1200px and wider): Main content centered, Sidebar in left gutter */
+  @media (min-width: 1200px) {
+      .layout-with-sidebar {
+          display: grid;
+          grid-template-columns: 1fr 800px 1fr;
+          gap: 40px;
+          margin: 0 auto;
+          padding: 40px 20px 20px;
+      }
+      
+      .sidebar-toc {
+          grid-column: 1;
+          justify-self: end;
+      }
+      
+      .layout-with-sidebar main {
+          grid-column: 2;
+          width: 100%;
+          max-width: 800px;
+      }
+  }
+
+  /* Medium Screen Layout (1024px to 1199px): Side-by-side flex layout to fit both elements */
+  @media (min-width: 1024px) and (max-width: 1199px) {
+      .layout-with-sidebar {
+          display: flex;
+          max-width: 1000px;
+          margin: 0 auto;
+          padding: 40px 20px 20px;
+          gap: 40px;
+      }
+      
+      .layout-with-sidebar main {
+          flex-grow: 1;
+          max-width: 700px;
+      }
+  }
+
+ @media (max-width: 1023px) {
+     .layout-with-sidebar {
+         display: block;
+         max-width: 800px;
+         margin: 0 auto;
+         padding: 20px 10px 10px;
+     }
+     
+     .sidebar-toc {
+         position: sticky;
+         top: 0;
+         z-index: 100;
+         background-color: #fff;
+         border-bottom: 1px solid #e0dbf5;
+         margin-bottom: 20px;
+         box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+     }
+     
+     .mobile-toc-toggle {
+         display: flex;
+         width: 100%;
+         padding: 15px 20px;
+         background-color: var(--main-color-light);
+         border: none;
+         color: var(--main-color);
+         font-weight: bold;
+         font-size: 1em;
+         justify-content: space-between;
+         align-items: center;
+         cursor: pointer;
+         outline: none;
+     }
+     
+     .mobile-toc-toggle .toggle-icon {
+         font-size: 1.2em;
+         transition: transform 0.3s ease;
+     }
+     
+     .mobile-toc-toggle.active .toggle-icon {
+         transform: rotate(180deg);
+     }
+     
+     .toc-nav {
+         display: none; /* Collapsed by default */
+         padding: 15px 20px;
+         background-color: #fff;
+         border-top: 1px solid #e0dbf5;
+         max-height: 70vh;
+         overflow-y: auto;
+     }
+     
+     .toc-nav h3 {
+         display: none; /* Hide internal title in mobile */
+     }
+     
+     .toc-nav ul {
+         list-style: none;
+         padding: 0;
+         margin: 0;
+     }
+     
+     .toc-nav li {
+         border-bottom: 1px solid #f6f5fd;
+     }
+     .toc-nav li:last-child {
+         border-bottom: none;
+     }
+     
+     .toc-nav a {
+         display: block;
+         padding: 12px 10px;
+         color: #444;
+         text-decoration: none;
+         font-size: 1em;
+     }
+     
+     .toc-nav a:active {
+         background-color: #f6f5fd;
+         color: var(--main-color);
+     }
+ }

@@ -21,26 +21,145 @@
 <body>
     <header id="site-header" data-title="Code Poems" data-current="poem"></header>
 
-    <div class="navigation2">
-        <nav>
-            <ul>
-                <li><a href="#poem_unsignd_signd">不合なし不合付き</a></li>
-                <li><a href="#poem_about_enemy">敵について</a></li>
-                <li><a href="#poem_binary_search">binary_search.c</a></li>
-                <li><a href="#poem_survival_is_resistance">生存は抵抗.c</a></li>
-                <li><a href="#poem_pray">pray.c</a></li>
-                <li><a href="#poem_typedef_gender">typedef_gender.c</a></li>
-                <li><a href="#poem_tokureihou">特例法.c</a></li>
-                <li><a href="#poem_not_a_phase">not_a_phase.c</a></li>
-                <li><a href="#poem_gender_assignment">gender_assignment.c</a></li>
-                <li><a href="#poem_your_gender_volid">your_gender_volid.py</a></li>
-                <li><a href="#poem_introduction">introduction.c</a></li>
+    <div class="layout-with-sidebar">
+        <aside class="sidebar-toc">
+            <button class="mobile-toc-toggle" onclick="toggleMobileToc()">
+                <span>目次</span>
+                <span class="toggle-icon">▾</span>
+            </button>
+            <nav class="toc-nav">
+                <h3>目次</h3>
+                <ul>
+                    <li><a href="#poem_hardcoded_gender">HardcodedGender.java</a></li>
+                    <li><a href="#poem_unsignd_signd">不合なし不合付き</a></li>
+                    <li><a href="#poem_about_enemy">敵について</a></li>
+                    <li><a href="#poem_binary_search">binary_search.c</a></li>
+                    <li><a href="#poem_survival_is_resistance">生存は抵抗.c</a></li>
+                    <li><a href="#poem_pray">pray.c</a></li>
+                    <li><a href="#poem_typedef_gender">typedef_gender.c</a></li>
+                    <li><a href="#poem_tokureihou">特例法.c</a></li>
+                    <li><a href="#poem_not_a_phase">not_a_phase.c</a></li>
+                    <li><a href="#poem_gender_assignment">gender_assignment.c</a></li>
+                    <li><a href="#poem_your_gender_volid">your_gender_volid.py</a></li>
+                    <li><a href="#poem_introduction">introduction.c</a></li>
+                </ul>
+            </nav>
+        </aside>
 
-            </ul>
-        </nav>
-    </div>
+        <main>
+        <section id="poem_hardcoded_gender" class="poem">
+            <h2>HardcodedGender.java</h2>
+            <div class="code-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-button active" onclick="switchTab(event, 'tab-person')">Person.java</button>
+                    <button class="tab-button" onclick="switchTab(event, 'tab-gender')">Gender.java</button>
+                    <button class="tab-button" onclick="switchTab(event, 'tab-doctor')">Doctor.java</button>
+                    <button class="tab-button" onclick="switchTab(event, 'tab-court')">Court.java</button>
+                </div>
+                <div class="tab-contents">
+                    <div id="tab-person" class="tab-content active">
+                        <pre><code class="language-clike">public class Person {
+    private String name;
+    private Gender gender;
+    public Gender appearance;
+    private boolean visitedGenderClinic; 
 
-    <main>
+    public Person(String name, Gender appearance, Doctor doctor) {
+        this.name = name;
+        this.gender = doctor.assignGender(this);
+        this.appearance = appearance;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name, Court familyCourt ) {
+        if (familyCourt.validateName(this, name)) {
+            this.name = name;
+        } else {
+            throw new IllegalArgumentException("Invalid name");
+        }
+    }
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender, Court familyCourt, Doctor doctor ) {
+        if (familyCourt.validateGender(this, gender, doctor)) {
+            this.gender = gender;
+        } else {
+            throw new IllegalArgumentException("Invalid gender");
+        }
+    }
+
+    public Gender getAppearance() {
+        return appearance;
+    }
+
+    public void setAppearance(Gender appearance) {
+        this.appearance = appearance;
+    }
+
+    public boolean getMedicalTransition() {
+        return this.visitedGenderClinic;
+    }
+
+    public void visitGenderClinic(Doctor doctor) {
+        this.visitedGenderClinic = true;
+    }
+
+    
+}</code></pre>
+                    </div>
+                    <div id="tab-gender" class="tab-content">
+                        <pre><code class="language-clike">public enum Gender {
+    MALE,
+    FEMALE
+}</code></pre>
+                    </div>
+                    <div id="tab-doctor" class="tab-content">
+                        <pre><code class="language-clike">class Doctor extends Person {
+
+    public Gender assignGender(Person person) {
+        if (person.getAppearance() == Gender.MALE) {
+            return Gender.MALE;
+        } else {
+            return Gender.FEMALE;
+        }
+    }
+
+    public boolean shareMedicalInfo(Person person) {
+        return person.getMedicalTransition();
+    }
+
+}</code></pre>
+                    </div>
+                    <div id="tab-court" class="tab-content">
+                        <pre><code class="language-clike">class Court {
+    
+    public boolean validateName(Person person, String name) {
+        if (!person.getAppearance().equals(person.getGender())) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
+    public boolean validateGender(Person person, Gender gender, Doctor doctor) {
+        if (doctor.shareMedicalInfo(person) &amp;&amp; person.getAppearance().equals(gender)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="poem_unsignd_signd" class="poem">
             <h2>不合なし不合付き</h2>
             <pre><code class="language-C">
@@ -313,8 +432,42 @@ int main() {
         </section>
 
     </main>
+</div>
 
     <footer id="site-footer"></footer>
+
+    <script>
+        function switchTab(event, tabId) {
+            const container = event.currentTarget.closest('.code-tabs');
+            container.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            container.querySelectorAll('.tab-button').forEach(button => {
+                button.classList.remove('active');
+            });
+            container.querySelector('#' + tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+
+        function toggleMobileToc() {
+            const toggle = document.querySelector('.mobile-toc-toggle');
+            const nav = document.querySelector('.toc-nav');
+            const isOpen = toggle.classList.toggle('active');
+            nav.style.display = isOpen ? 'block' : 'none';
+        }
+
+        // モバイル表示の際、リンクをクリックしたら自動的に目次を閉じる
+        document.querySelectorAll('.toc-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth < 1024) {
+                    const toggle = document.querySelector('.mobile-toc-toggle');
+                    const nav = document.querySelector('.toc-nav');
+                    toggle.classList.remove('active');
+                    nav.style.display = 'none';
+                }
+            });
+        });
+    </script>
 
 </body>
 
